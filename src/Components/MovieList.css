@@ -1,0 +1,6 @@
+.image_container {
+	float: left;
+	display: table;
+	width: auto;
+	margin: auto;
+}

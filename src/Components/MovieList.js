@@ -1,10 +1,11 @@
 import React from 'react';
+import './MovieList.css';
 
-const MovieList = (props) => {
+const MovieList = (searchinput) => {
 	return (
 		<>
-			{props.movies.map((movie, index) => (
-				<div className='image-container'>
+			{searchinput.movies.map((movie, index) => (
+				<div className='image_container'>
 					<img src={movie.Poster} alt='movie'></img>
 					
 				</div>

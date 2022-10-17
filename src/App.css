@@ -3,25 +3,23 @@ body {
 	color: #ffffff;
 }
 
+a {
+	min-width: 80px;
+}
+
 .movie-app > .row {
 	overflow-x: auto;
 	/* flex-wrap: nowrap; */
 	margin-left: auto;
 	margin-right: auto;
-	width: 99%;
+	width: 99%;	
+	margin-top: 5%;
 }
 
 .row>* {
   flex-shrink: 1;
 }
 
-.image-container {
-	float: left;
-	display: table;
-	width: auto;
-	margin: auto;
-	columns: 5;
-}
 
 .navbar {
     background-color: #141414;
@@ -37,7 +35,7 @@ body {
 	float: right;
 
 }
-.navbar a {
+.navbar a, a1 {
     float: left;
     color: #f2f2f2;
     text-align: center;
@@ -50,6 +48,9 @@ body {
 .navbar a:hover {
     background-color: #ddd;
     color: black;
+}
+
+.navbar a1:hover {
 }
   
 .navbar a.active {
@@ -69,3 +70,6 @@ body {
 	  text-align: left;
   }
   
+  .searchIcon {
+	width: 10px;
+  }
