@@ -5,10 +5,67 @@ body {
 
 .movie-app > .row {
 	overflow-x: auto;
-	flex-wrap: nowrap;
-  
+	/* flex-wrap: nowrap; */
+	margin-left: auto;
+	margin-right: auto;
+	width: 99%;
 }
 
 .row>* {
   flex-shrink: 1;
 }
+
+.image-container {
+	float: left;
+	display: table;
+	width: auto;
+	margin: auto;
+	columns: 5;
+}
+
+.navbar {
+    background-color: #141414;
+    overflow: hidden;
+    size: 100%;
+    position: fixed;
+    top: 0px;
+    width: 100%;
+    z-index: 100; 
+ }
+
+ .navbar > nav {
+	float: right;
+
+}
+.navbar a {
+    float: left;
+    color: #f2f2f2;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 17px;
+    
+}
+
+.navbar a:hover {
+    background-color: #ddd;
+    color: black;
+}
+  
+.navbar a.active {
+    background-color: #04AA6D;
+    color: white;
+  }
+
+  .menu_home {
+	width:50%;
+	float: left;
+  }
+  
+  
+  .menu_bar {
+	  float:left;
+	  width: 50%;
+	  text-align: left;
+  }
+  
