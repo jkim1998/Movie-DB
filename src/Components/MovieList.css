@@ -4,3 +4,13 @@
 	width: auto;
 	margin: auto;
 }
+
+.poster {
+	height: 400px;
+	width: auto;
+}
+
+.title {
+	text-align: center;
+	margin: 5%;
+}
