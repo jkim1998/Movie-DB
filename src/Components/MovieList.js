@@ -4,7 +4,6 @@ import './MovieList.css';
 import MovieDetail from './MovieDetail';
 
 
-
 const MovieList = (searchinput) => {
 	const [buttonPopup, setButtonPopup] = useState(false);		
 		return (

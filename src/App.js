@@ -48,7 +48,7 @@ const App = () => {
             <a href="#">Series</a>                  
             <a href="#">Trend</a>
             <a href="#">View History</a>
-            <div onClick={() => setButtonPopup(true)}>test</div>
+            <div classname='detail' onClick={() => setButtonPopup(true)}>test</div>
             <MovieDetail trigger={buttonPopup} setTrigger={setButtonPopup}> 
               <h3>mypopup</h3> 
             </MovieDetail>
