@@ -1,8 +1,10 @@
 .image_container {
-	float: left;
-	display: table;
-	width: auto;
-	margin: auto;
+	display: grid;
+	/* grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); */
+	/* grid-gap: auto; */
+	/* margin-left: 0; */
+	/* margin-right: auto; */
+	width: 350px;
 }
 
 .poster {
@@ -13,4 +15,22 @@
 .title {
 	text-align: center;
 	margin: 5%;
+}
+
+.poster_container {
+	display: flex;
+	background-color: transparent;
+	justify-content: center;
+	width: 350px;
+	height: 400px;
+}
+
+img {
+	max-width: 350px;
+	height: auto;
+}
+
+
+tr {
+	text-align: center;
 }

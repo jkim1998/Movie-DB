@@ -9,11 +9,16 @@ const MovieList = (searchinput) => {
 		return (
 			<>
 				{searchinput.movies.map((movie, index) => (
-					<div className='image_container' onClick={() => setButtonPopup(true)}>
-						<img src={movie.Poster} alt='movie' className='poster'onClick={() => setButtonPopup(true)}></img>
+					<div className='image_container'>
+						<div className='poster_container'>
+							<div classname='detail' onClick={() => setButtonPopup(true)}></div>
+							<img src={movie.Poster} alt='movie' className='poster'onClick={() => setButtonPopup(true)}></img>
+							
+							<MovieDetail trigger={buttonPopup} setTrigger={setButtonPopup} />
+							</div>
 						<div className='title'>{movie.Title}</div>
-						<MovieDetail trigger={buttonPopup} setTrigger={setButtonPopup} />
 					</div>
+					
 				))}
 			</>
 		);

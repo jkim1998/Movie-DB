@@ -64,8 +64,11 @@ const App = () => {
       </div>
       
       <h1>movies</h1>  
+      <div className='y'>
 			<div className='row'>
-				<MovieList movies={movies} />
+        
+				  <MovieList movies={movies} />
+        </div>
 			</div>
     </div>
 	);
