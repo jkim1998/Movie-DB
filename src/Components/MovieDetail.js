@@ -1,6 +1,9 @@
-import { Movie } from '@material-ui/icons';
+import { useState } from 'react';
 import React from 'react'
 import './MovieDetail.css'
+import MovieList from './MovieList';
+import Summary from './Summary';
+import { Movie } from '@material-ui/icons';
 
 function MovieDetail(props) {
     
@@ -15,7 +18,8 @@ function MovieDetail(props) {
                 {/* <img src={movie.Poster} alt='movie' className='poster'></img> */}
                 </div>
                 <div className='summary'>
-                    <p> Title: {Movie.Title} </p>
+                    {/* <Detail /> */}
+                    <p> Title: <Summary /> </p>
                     <p> Year: </p>
                     <p> PG </p>
                     <p> rating</p>
@@ -39,4 +43,3 @@ function MovieDetail(props) {
 
 export default MovieDetail
 
-// change

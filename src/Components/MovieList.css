@@ -1,10 +1,10 @@
 .image_container {
-	display: grid;
-	/* grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); */
-	/* grid-gap: auto; */
-	/* margin-left: 0; */
-	/* margin-right: auto; */
-	width: 350px;
+    background: #353535;
+    max-height: 500px;
+    animation: animateGrid .5s;
+    overflow: hidden;
+	background-color: transparent;
+	justify-content: center;
 }
 
 .poster {
