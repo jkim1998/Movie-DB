@@ -1,13 +1,13 @@
 {
   "files": {
-    "main.css": "/react-deploy/static/css/main.7fe78810.css",
-    "main.js": "/react-deploy/static/js/main.594c2049.js",
-    "index.html": "/react-deploy/index.html",
-    "main.7fe78810.css.map": "/react-deploy/static/css/main.7fe78810.css.map",
-    "main.594c2049.js.map": "/react-deploy/static/js/main.594c2049.js.map"
+    "main.css": "/Movie-DB/static/css/main.e0cdaf5b.css",
+    "main.js": "/Movie-DB/static/js/main.fb74d7be.js",
+    "index.html": "/Movie-DB/index.html",
+    "main.e0cdaf5b.css.map": "/Movie-DB/static/css/main.e0cdaf5b.css.map",
+    "main.fb74d7be.js.map": "/Movie-DB/static/js/main.fb74d7be.js.map"
   },
   "entrypoints": [
-    "static/css/main.7fe78810.css",
-    "static/js/main.594c2049.js"
+    "static/css/main.e0cdaf5b.css",
+    "static/js/main.fb74d7be.js"
   ]
 }
