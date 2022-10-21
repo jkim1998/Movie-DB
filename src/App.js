@@ -21,7 +21,7 @@ const App = () => {
     if (typeof serachValue === 'string' && searchValue.trim().length === 0) {
       const url = `http://www.omdbapi.com/?s=avengers&apikey=f235d7e2`;
     }
-    const url = `http://www.omdbapi.com/?s=avengers&apikey=f235d7e2`;
+    const url = `http://www.omdbapi.com/?s=korean&apikey=f235d7e2`;
 		// const url = `http://www.omdbapi.com/?s=${searchValue}&apikey=f235d7e2`;
 
 		const response = await fetch(url);
