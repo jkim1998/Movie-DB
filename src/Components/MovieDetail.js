@@ -38,3 +38,5 @@ function MovieDetail(props) {
 }
 
 export default MovieDetail
+
+// change
