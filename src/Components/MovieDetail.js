@@ -12,30 +12,29 @@ function MovieDetail(props) {
     
     <div className='popup'>
         <div className='popup-inner'>
-            <div className='info'>
-                <div className='image-container'>
-                    
-                {/* <img src={movie.Poster} alt='movie' className='poster'></img> */}
-                </div>
-                <div className='summary'>
-                    {/* <Detail /> */}
-                    <p> Title: <Summary /> </p>
-                    <p> Year: </p>
-                    <p> PG </p>
-                    <p> rating</p>
-                    <p> directed by</p>
-                    <p> actor</p>
-                    <p> summary</p>
-                    <p> awards </p> 
-                    <p> trailer </p>
-                    <p> genre </p>
-                
-                </div>
-                
+          <div className='top'>
+            <div className='image-container'>
+              <img src="https://m.media-amazon.com/images/M/MV5BMTYzOTc2NzU3N15BMl5BanBnXkFtZTcwNjY3MDE3NQ@@._V1_SX300.jpg" alt='movie' className='poster'></img>
+              <button>Add to List</button>
+              <button>Mark as "viewed"</button>
             </div>
-            <button>Add to List</button>
-                <button>Mark as "viewed"</button>
-            <button className='close-btn' onClick={() => props.setTrigger(false)}>X</button>
+            <div className='info'>
+              <p> Title: <Summary /> </p>
+              <p> Year: </p>
+              <p> PG </p>
+              <p> rating</p>
+              <p> directed by</p>
+              <p> actor</p>
+              <p> summary</p>
+              <p> genre </p> 
+            </div>
+          </div>
+          <div className='bot'>
+            <div className='summary'>
+              <p>Summary: It is 1941 and the world is in the throes of war. Steve Rogers (Chris Evans) wants to do his part and join America's armed forces, but the military rejects him because of his small stature. Finally, Steve gets his chance when he is accepted into an experimental program that turns him into a supersoldier called Captain America. Joining forces with Bucky Barnes (Sebastian Stan) and Peggy Carter (Hayley Atwell), Captain America leads the fight against the Nazi-backed HYDRA organization.</p>
+            </div>    
+          </div>
+          <button className='close-btn' onClick={() => props.setTrigger(false)}>X</button>
         </div>
     </div>
   ) : "";

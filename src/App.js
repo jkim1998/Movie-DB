@@ -14,15 +14,15 @@ import MovieDetail from './Components/MovieDetail';
 const App = () => {
 	const [movies, setMovies] = useState([]);
 	const [favourites, setFavourites] = useState([]);
-	const [searchValue, setSearchValue] = useState('');
+	const [searchValue, setSearchValue] = useState('korean');
   const [buttonPopup, setButtonPopup] = useState(false);
 
 	const getMovieRequest = async (searchValue) => {
     if (typeof serachValue === 'string' && searchValue.trim().length === 0) {
       const url = `http://www.omdbapi.com/?s=avengers&apikey=f235d7e2`;
     }
-    const url = `http://www.omdbapi.com/?s=korean&apikey=f235d7e2`;
-		// const url = `http://www.omdbapi.com/?s=${searchValue}&apikey=f235d7e2`;
+    // const url = `http://www.omdbapi.com/?s=korean&apikey=f235d7e2`;
+		const url = `http://www.omdbapi.com/?s=${searchValue}&apikey=f235d7e2`;
 
 		const response = await fetch(url);
 		const responseJson = await response.json();
@@ -42,12 +42,12 @@ const App = () => {
 		<div className='movie-app'>
       <div className='navbar'>
         <nav id="left">
-            <a href="#"><LiveTvIcon /></a>
-            <a href="#">Home</a>
-            <a href="#">Watch List</a>
-            <a href="#">Series</a>                  
-            <a href="#">Trend</a>
-            <a href="#">View History</a>
+            <button href="#"><LiveTvIcon /></button>
+            <button onClick={() => getMovieRequest('star wars')}>Home</button>
+            <button href="#">Watch List</button>
+            <button href="#">Series</button>                  
+            <button href="#">Trend</button>
+            <button href="#">View History</button>
             {/* <div classname='detail' onClick={() => setButtonPopup(true)}>test</div>
             <MovieDetail trigger={buttonPopup} setTrigger={setButtonPopup}> 
               <h3>mypopup</h3> 
@@ -56,8 +56,15 @@ const App = () => {
         <nav id="right">
           <a1><SearchBar searchValue={searchValue} setSearchValue={setSearchValue} /></a1>
           {/* <a><button><SearchIcon /></button></a>  */}
-          <a><SettingsIcon /></a>
-          <a><AccountCircleIcon /><ArrowDropDownIcon /></a>  
+          <a1 class='dropdown'><AccountCircleIcon /><ArrowDropDownIcon />
+            <div class="dropdown-content">
+              <p>Welcome User!</p>
+              <p>Account Setting</p>
+              <p>Dark mode</p>
+              <p>Log Out</p>
+            </div>
+          </a1>
+           
         </nav>
         
         

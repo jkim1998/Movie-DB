@@ -4,7 +4,8 @@
     animation: animateGrid .5s;
     overflow: hidden;
 	background-color: transparent;
-	justify-content: center;
+	justify-content: center;	
+	transition: transform 0.2s;
 }
 
 .poster {
