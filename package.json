@@ -1,7 +1,7 @@
 {
   "name": "movie_app",
   "version": "0.1.0",
-  "homepage": "https://jkim1998.github.io/Movie-DB",
+  "homepage": "https://jkim1998.github.io/Movie-DB/",
   "private": true,
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^6.2.0",

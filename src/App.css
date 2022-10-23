@@ -22,9 +22,6 @@ button {
   flex-shrink: 1;
 }
 
-.container {
-}
-
 .spacing {
   width: 10%;
   float:left;
@@ -104,9 +101,10 @@ button {
   .dropdown-content {
     display: none;
     position: fixed;
-    background-color: #686767;
+    /* background-color: #f14c4c(0.5); */
+    /* border-color:#fff7f7; */
     min-width: 160px;
-    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    box-shadow: 0px 8px 16px 0px rgba(224, 197, 197, 0.2);
     padding: 12px 16px;
     z-index: 1;
     right: 0;
