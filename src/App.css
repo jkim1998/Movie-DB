@@ -1,3 +1,21 @@
+.theme_dark {
+  --dark-text: #141414;
+  --light-text: #ffffff;  
+  --dark-background: #141414;
+  --light-background: #ffffff;
+  /* --accent: #B8DBD9; */
+  /* --button-border: #B8DBD9; */
+}
+
+.theme_light {
+  --dark-text: #141414;
+  --light-text: #ffffff;  
+  --dark-background: #141414;
+  --light-background: #ffffff;
+  /* --accent: #B8DBD9; */
+  /* --button-border: #B8DBD9; */
+}
+
 body {
 	background: #141414;
 	color: #ffffff;
@@ -35,7 +53,7 @@ button {
 }
 
 .navbar {
-    background-color: #141414;
+    background-color: var(--dark-background);
     overflow: hidden;
     size: 100%;
     position: fixed;
@@ -58,6 +76,10 @@ button {
     
 }
 
+.a1 {
+  margin-top: 100px;
+}
+
 .navbar button:hover {
     background-color: #ddd;
     color: black;
@@ -73,8 +95,8 @@ button {
   }
 
   .menu_home {
-	width:50%;
-	float: left;
+    width:50%;
+    float: left;
   }
   
   
