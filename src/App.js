@@ -1,7 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
+import NavBar from './Components/NavBar';
 import MovieList from './Components/MovieList';
+import ViewHistory from './Components/ViewHistory';
 import SearchBar from './Components/SearchBar';
 import MyList from './Components/MyList.js';
 import MovieData from './Data.json';
@@ -13,7 +15,8 @@ import SettingsIcon from '@material-ui/icons//Settings';
 import MovieDetail from './Components/MovieDetail';
 import { keepTheme } from './Components/Theme';
 import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
-
+import {Header} from './Components/Header';
+// import { Route, Routes } from "react-router-dom";
 
 const App = () => {
   document.title = 'Movie DB';
@@ -45,7 +48,6 @@ const App = () => {
 	}, [searchValue]);
  
   return (
-    <Router>
   <div>  
     <head>
       <title>My Page Title</title>
@@ -53,18 +55,20 @@ const App = () => {
     </head>
 		<div className='movie-app'>
       <div className='navbar'>
-        <nav id="left">
-            <button href="#"><LiveTvIcon /></button>
-            <button onClick={() => getMovieRequest('star wars')}>Home</button>
-            {/* <button onClick={event =>  window.location.href='MyList.js'}>Watch List</button> */}
-            <Link to="/favlist">Homee</Link>
-            <Routes>
-              <Route path="/" element={<MyList />}>
-              </Route>
-            </Routes>
-            <button href="#">Trend</button>
-            <button href="#">View History</button>
-        </nav>
+        {/* <nav id="left"> */}
+            {/* <button href="#"><LiveTvIcon /></button> */}
+            {/* <button onClick={() => getMovieRequest('star wars')}>Home</button> */}
+            <Router>
+             <NavBar />
+              <Routes>
+                {/* <Route exact path='/' element={<App />}>Home</Route> */}
+                <Route exact path='/MyList' element={<MyList />}>MyList</Route>
+                <Route exact path='/Viewed' element={<ViewHistory />} />
+              </Routes>
+            </Router>
+            {/* <button href="#">Trend</button> */}
+            {/* <button href="#">View History</button> */}
+        {/* </nav> */}
         <nav id="right">
           <a1><SearchBar searchValue={searchValue} setSearchValue={setSearchValue} /></a1>
           <a1 class='dropdown'><AccountCircleIcon /><ArrowDropDownIcon />
@@ -82,15 +86,8 @@ const App = () => {
         </div> 
     </div>
   </div>
-  </Router>
 	);
 };
-const favlist = () => {
-  return (
-    <h1> hello </h1>
-  )
-}
-
 
 
 export default App;

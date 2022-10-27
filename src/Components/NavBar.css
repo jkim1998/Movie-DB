@@ -1,0 +1,24 @@
+.test {
+    color: #ffff;
+    height: 40px;
+    text-align: center;
+    vertical-align: middle;
+    min-width: 120px;
+    background-color: transparent;
+    border: none;
+    padding: 5% 0;
+}
+
+.svg_icons {
+    transform: scale(1.8);
+ }
+
+.tes1t {
+    display: flex;
+    width: 50%;
+}
+
+
+.test:hover {
+    background-color: bisque;
+}

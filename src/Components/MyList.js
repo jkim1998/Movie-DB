@@ -8,7 +8,7 @@ import MovieDetail from './MovieDetail';
 const MyList = () => {	
 		return (
 			<div>
-				<p> ???? </p>
+				<p> WatchList </p>
 			</div>
 		);
 };
