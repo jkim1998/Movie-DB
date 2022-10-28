@@ -23,8 +23,8 @@ body {
 
 button {
 	min-width: 80px;
-  background-color: transparent;
-  border: none;
+  /* background-color: transparent; */
+  /* border: none; */
 }
 
 .movie-app > .row {
@@ -53,7 +53,7 @@ button {
 }
 
 .navbar {
-    background-color: var(--dark-background);
+    background-color: #141414;
     overflow: hidden;
     size: 100%;
     position: fixed;
@@ -66,7 +66,7 @@ button {
 	float: right;
 
 }
-.navbar button, a1 {
+.navbar button, a {
     float: left;
     color: #f2f2f2;
     text-align: center;
@@ -76,7 +76,7 @@ button {
     
 }
 
-.a1 {
+.a {
   margin-top: 100px;
 }
 
@@ -85,10 +85,6 @@ button {
     color: black;
 }
 
-.navbar a1:hover {
-
-}
-  
 .navbar button.active {
     background-color: #04AA6D;
     color: white;
