@@ -24,14 +24,13 @@ const App = () => {
 	const [favourites, setFavourites] = useState([]);
 	const [searchValue, setSearchValue] = useState('spider');
   const [buttonPopup, setButtonPopup] = useState(false);
-  const [count, setCount] = useState(2);
+  const [count, setCount] = useState(1);
+  const [omdbID, setOmdbID] = useState('');
   const APIKEY = 'f235d7e2';	
 
 	const getMovieRequest = async (searchValue) => {
-    if (typeof serachValue === 'string' && searchValue.trim().length === 0) {
-      const url = `http://www.omdbapi.com/?s=avengers&apikey=${APIKEY}`;
-    }
-    	const url = `http://www.omdbapi.com/?s=${searchValue}&page=${count}&apikey=${APIKEY}`;
+   
+    const url = `http://www.omdbapi.com/?s=${searchValue}&page=${count}&apikey=${APIKEY}`;
 		const response = await fetch(url);
 		const responseJson = await response.json();
 
@@ -43,6 +42,10 @@ const App = () => {
 	useEffect(() => {
 		getMovieRequest(searchValue);
 	}, [searchValue]);
+  
+
+  
+
 
   return (
   <div>  
@@ -50,9 +53,6 @@ const App = () => {
       <link rel="icon" type="image/x-icon" href="favicon.ico"></link>
 		<div className='movie-app'>
       <div className='navbar'>
-        {/* <nav id="left"> */}
-            {/* <button href="#"><LiveTvIcon /></button> */}
-            {/* <button onClick={() => getMovieRequest('star wars')}>Home</button> */}
             <Router>
              <NavBar />
               <Routes>
@@ -61,8 +61,6 @@ const App = () => {
                 <Route exact path='/Viewed' element={<ViewHistory />} />
               </Routes>
             </Router>
-            {/* <button href="#">Trend</button> */}
-            {/* <button href="#">View History</button> */}
         {/* </nav> */}
         <nav id="right">
           <a><SearchBar searchValue={searchValue} setSearchValue={setSearchValue} /></a>
@@ -92,5 +90,3 @@ const App = () => {
 
 
 export default App;
-
-

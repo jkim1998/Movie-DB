@@ -7,6 +7,8 @@ import AccountCircleIcon from '@material-ui/icons/AccountCircle';
 import ArrowDropDownIcon from '@material-ui/icons/ArrowDropDown';
 import LiveTvIcon from '@material-ui/icons/LiveTv';
 import SettingsIcon from '@material-ui/icons//Settings';
+import ViewHistory from './ViewHistory';
+
 
 export const NavBar = () => {
     return (
@@ -27,9 +29,10 @@ export const NavBar = () => {
                     <p>View List</p>
                 </div>
             </Link>
-            <Link to="/Viewed" style={{ textDecoration: 'none' }}>
+            <Link to={"./Viewed"} style={{ textDecoration: 'none' }}>
                 <div className='test'>
-                    <p>View History</p>
+                    <p>Viewed List</p>
+                    <ViewHistory />
                 </div>
             </Link>
         </div>

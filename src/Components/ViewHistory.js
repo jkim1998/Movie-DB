@@ -1,11 +1,11 @@
 import { useState } from 'react';
 import React from 'react';
-
+import './ViewHistory.css'
 
 const ViewHistory = () => {	
 		return (
-			<div>
-				<p> ViewedList </p>
+			<div className='q1'>
+				
 			</div>
 		);
 };

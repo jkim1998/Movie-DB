@@ -6,6 +6,7 @@ import MovieDetail from './MovieDetail';
 
 const MovieList = (searchinput) => {
 	const [buttonPopup, setButtonPopup] = useState(false);
+	const [movieDetail, setMovieDetail] = useState('');
 		return (
 			<>
 				{searchinput.movies.map((movie, index) => (
@@ -13,7 +14,7 @@ const MovieList = (searchinput) => {
 						<div className='poster_container'>
 							<div classname='detail' ></div>
 							<img src={movie.Poster} alt='movie' className='poster'onClick={() => setButtonPopup(true)}></img>
-							<MovieDetail trigger={buttonPopup} setTrigger={setButtonPopup} movieid={'tt0848228'}/>
+							<MovieDetail trigger={buttonPopup} setTrigger={setButtonPopup} movieDetail={'tt0848228'}/>
 							</div>
 						<div className='title'>{movie.Title}</div>
 					</div>

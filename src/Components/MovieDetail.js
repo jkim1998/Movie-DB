@@ -1,57 +1,63 @@
 import { useState, useEffect } from 'react';
+import MovieData from './moviedata.json';
 import React from 'react'
 import './MovieDetail.css'
 import MovieList from './MovieList';
 import MyList from './MyList';
 import { Movie } from '@material-ui/icons';
+import Home from'./Home';
 
-function MovieDetail(props, movieid) {
-  const [movies, setMovies] = useState([]);
-  const [buttonPopup, setButtonPopup] = useState(false);
+const MovieDetail = (props) => {
+    const [movies, setMovies] = useState([]);
+    const [omdbID, setOmdbID] = useState('');
+    const APIKEY = 'f235d7e2';	
 
-  const getMovieDetail = async (movieid) => {
-    const url = `http://www.omdbapi.com/?i=${movieid}&apikey=f235d7e2`;
+    const getMovieDetail = async (omdbID) => {
+    const url = `http://www.omdbapi.com/?i=${omdbID}&apikey=${APIKEY}`;
+    const response = await fetch(url);
+    const responseJson = await response.json();
 
-		const response = await fetch(url);
-		const responseJson = await response.json();
-
-		if (responseJson.Search) {
+    if (responseJson.Search) {
 			setMovies(responseJson.Search);
 		}
 	};
 
 	useEffect(() => {
-		getMovieDetail(movieid);
-	}, [movieid]);
+		getMovieDetail(omdbID);
+	}, [omdbID]);
  
     
   return (props.trigger) ? (
-    // {movieid.movies.map((movie, index) => (
+    // {.movieDetail.map((movieDetails, index) => (
     <div className='popup'>
         <div className='popup-inner'>
           <div className='top'>
             <div className='image-container'>
-              {/* <img src="https://m.media-amazon.com/images/M/MV5BMTYzOTc2NzU3N15BMl5BanBnXkFtZTcwNjY3MDE3NQ@@._V1_SX300.jpg" alt='movie' className='poster'></img> */}
-               <img src="https://m.media-amazon.com/images/M/MV5BMTYzOTc2NzU3N15BMl5BanBnXkFtZTcwNjY3MDE3NQ@@._V1_SX300.jpg" alt='movie' className='poster'></img>
+            <img src = {MovieData.Poster} alt = "movie poster" />
               <button>Add to List</button>
               <button>Mark as "viewed"</button>
             </div>
+           
             <div className='info'>
-              <p> Title:  </p>
-              <p> Year: <MyList /></p>
-              <p> PG </p>
-              <p> rating</p>
-              <p> directed by</p>
-              <p> actor</p>
-              <p> summary</p>
-              <p> genre </p> 
+              <h3 class = "movie-title">{MovieData.Title}</h3>
+                <ul class = "movie-misc-info">
+                    <li class = "year">Year: {MovieData.Year}</li>
+                    <li class = "rated">Ratings: {MovieData.Rated}</li>
+                    <li class = "released">Released: {MovieData.Released}</li>
+                </ul>
+                <p class = "genre"><b>Genre:</b> {MovieData.Genre}</p>
+                <p class = "writer"><b>Writer:</b> {MovieData.Writer}</p>
+                <p class = "actors"><b>Actors: </b>{MovieData.Actors}</p>
+                <p class = "plot"><b>Plot:</b> {MovieData.Plot}</p>
+                <p class = "language"><b>Language:</b> {MovieData.Language}</p>
+                <p class = "awards"><b><i class = "fas fa-award"></i></b> {MovieData.Awards}</p>
+            
             </div>
           </div>
-          <div className='bot'>
+          {/* <div className='bot'>
             <div className='summary'>
-              <p>Summary: It is 1941 and the world is in the throes of war. Steve Rogers (Chris Evans) wants to do his part and join America's armed forces, but the military rejects him because of his small stature. Finally, Steve gets his chance when he is accepted into an experimental program that turns him into a supersoldier called Captain America. Joining forces with Bucky Barnes (Sebastian Stan) and Peggy Carter (Hayley Atwell), Captain America leads the fight against the Nazi-backed HYDRA organization.</p>
             </div>    
-          </div>
+          </div> */}
           <button className='close-btn' onClick={() => props.setTrigger(false)}>X</button>
         </div>
     </div>

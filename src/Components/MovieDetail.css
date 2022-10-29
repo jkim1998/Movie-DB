@@ -45,18 +45,18 @@
 }
 
 .image-container {
-    float: left;
+    /* float: left; */
     width: 50%;
     height: 100%;
     /* background-color: rgb(241, 14, 14); */
-    /* justify-content: center; */
+    justify-content: center;
+    /* display: grid; */
     /* vertical-align: middle; */
     /* align-items: center; */
 }
 
 .image-container > img {
-    margin-left: 80px;
-    /* margin-top: 10%; */
+    margin-left: 60px;
 }
 
 .image-container > button {
