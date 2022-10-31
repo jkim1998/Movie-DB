@@ -16,7 +16,6 @@ import MovieDetail from './Components/MovieDetail';
 import { keepTheme } from './Components/Theme';
 import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
 import {Header} from './Components/Header';
-// import { Route, Routes } from "react-router-dom";
 
 const App = () => {
   document.title = 'Movie DB';
@@ -25,11 +24,13 @@ const App = () => {
 	const [searchValue, setSearchValue] = useState('spider');
   const [buttonPopup, setButtonPopup] = useState(false);
   const [count, setCount] = useState(1);
+  // const [count, setCount] = useState(() => countInitial());
   const [omdbID, setOmdbID] = useState('');
   const APIKEY = 'f235d7e2';	
 
 	const getMovieRequest = async (searchValue) => {
    
+    // count is not updating
     const url = `http://www.omdbapi.com/?s=${searchValue}&page=${count}&apikey=${APIKEY}`;
 		const response = await fetch(url);
 		const responseJson = await response.json();
@@ -44,7 +45,17 @@ const App = () => {
 	}, [searchValue]);
   
 
-  
+  function countInitial() {
+    return 1;
+  }
+
+  function decrementCount() {
+    setCount(prevCount => prevCount - 1);
+  }
+
+  function incrementCount() {
+    setCount(prevCount => prevCount + 1);
+  }
 
 
   return (
@@ -77,12 +88,9 @@ const App = () => {
         <div className='row'>
           <MovieList movies={movies} />
         </div> 
-        <button onClick={() => setCount(count++)}>Click to increment by 1</button>
-        <button 
-            onClick={() => setCount(count--)}
-            disabled={count === 1}>
-            Click to decrease by 1
-        </button>
+        <button onClick={incrementCount}>Next</button>
+        <p>{count}</p>
+        <button onClick={decrementCount} disabled={count< 2}>Prev</button>
     </div>
   </div>
 	);
